@@ -59,6 +59,9 @@ class RustPlugin {
         cargoFlags = ` -p ${cargoPackage}`;
       }
     }
+    (this.custom.customEnvs || []).forEach(function(e) {
+      customArgs.push("-e", e);
+    });
     if (cargoFlags) {
       // --features awesome-feature, ect
       customArgs.push("-e", `CARGO_FLAGS=${cargoFlags}`);
