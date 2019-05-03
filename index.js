@@ -69,7 +69,7 @@ class RustPlugin {
     const dockerTag = (funcArgs || {}).dockerTag || this.custom.dockerTag;
     return spawnSync(
       "docker",
-      [...defaultArgs, ...customArgs, `softprops/lambda-rust:${dockerTag}`],
+      [...defaultArgs, ...customArgs, dockerTag],
       NO_OUTPUT_CAPTURE
     );
   }
