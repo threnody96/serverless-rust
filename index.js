@@ -59,6 +59,9 @@ class RustPlugin {
         cargoFlags = ` -p ${cargoPackage}`;
       }
     }
+    (this.custom.customVolumes || []).forEach(function(e) {
+      customArgs.push("-v", e);
+    });
     (this.custom.customEnvs || []).forEach(function(e) {
       customArgs.push("-e", e);
     });
