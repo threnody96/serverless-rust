@@ -46,7 +46,7 @@ class RustPlugin {
       '--rm',
       '-t',
       '-e', `BIN=${binary}`,
-      `-v`, `${this.servicePath}:/code`,
+      `-v`, `${this.servicePath}/backend:/code`,
       `-v`, `${process.env['HOME']}/.cargo/registry:/root/.cargo/registry`,
       `-v`, `${process.env['HOME']}/.cargo/git:/root/.cargo/git`,
     ];
